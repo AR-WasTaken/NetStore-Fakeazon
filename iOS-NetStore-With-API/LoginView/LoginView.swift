@@ -50,12 +50,6 @@ struct LoginView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 
-                Text("m38rmF$")
-                
-                Text("Username: \(dataFetcher.users.first?.username ?? ""), Email: \(dataFetcher.users.first?.email ?? ""), Password: \(dataFetcher.users.first?.password ?? "")")
-                
-                Text("Username: \(dataFetcher.users.count > 1 ? dataFetcher.users[1].username : ""), Email: \(dataFetcher.users.count > 1 ? dataFetcher.users[1].email : ""), Password: \(dataFetcher.users.count > 1 ? dataFetcher.users[1].password : "")")
-                
                 Button(action: {
                     let matchingUsers = dataFetcher.users.filter { $0.username == username || $0.email == username }
                     if let matchedUser = matchingUsers.first, matchedUser.password == password {
@@ -84,7 +78,6 @@ struct LoginView: View {
                         Text("Go to Profile")
                     }
                 }
-                Text("johnd, and m38rmF$")
             }
             .padding(.horizontal, 24)
             .onAppear {
